@@ -1,11 +1,4 @@
-import 'dart:io';
-
 import 'package:meu_app_imc/class/pessoa.dart';
-
-double calculateImc(Pessoa pessoa) {
-  double imc = pessoa.peso / (pessoa.altura * pessoa.altura);
-  return imc;
-}
 
 classificacao(Pessoa pessoa) {
   double resultado = calculateImc(pessoa);
@@ -30,4 +23,8 @@ classificacao(Pessoa pessoa) {
   } else if (resultado >= 40) {
     print("Obesidade Grau III (mórbida)");
   }
+}
+double calculateImc(Pessoa pessoa) {
+  double imc = pessoa.peso / (pessoa.altura * pessoa.altura);
+  return imc;
 }

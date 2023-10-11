@@ -35,7 +35,7 @@ class Utils {
     String nome = "";
     nome = lerConsole();
     while (nome == "") {
-      print("O nome da pessoa não pode estar vazio!");
+      print("O nome da pessoa não pode  estar vazio!");
       print("Digite o nome para continuar:");
       nome = lerConsole();
     }

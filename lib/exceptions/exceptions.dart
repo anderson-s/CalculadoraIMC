@@ -6,10 +6,12 @@ class NomeInvalidoException implements Exception {
   }
 }
 
-class DoubleInvalido implements Exception {
+class ExceptionsConvertDouble implements Exception {
+  final String mensagem;
+  ExceptionsConvertDouble(this.mensagem);
  
   @override
   String toString() {
-    return "Valor inválido!";
+    return mensagem;
   }
 }

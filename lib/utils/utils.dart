@@ -15,10 +15,18 @@ class Utils {
       console = console.replaceAll(",", ".");
       valor = double.parse(console);
     } catch (error) {
-      print(DoubleInvalido());
-      exit(0);
+      throw ExceptionsConvertDouble("Valor inválido!");
     }
-    
+    if (valor == 0.0) {
+      throw ExceptionsConvertDouble(
+        "Para calcular o IMC com precisão, a altura e o peso devem ser valores maiores que zero.\nPor favor, reveja os valores que você inseriu.",
+      );
+    }
+    if (valor < 0) {
+      throw ExceptionsConvertDouble(
+        "Os valores de altura e peso não podem ser negativos.\nPor favor, insira valores positivos.",
+      );
+    }
     return valor;
   }
 

@@ -1,22 +1,41 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:meu_app_imc/exceptions/exceptions.dart';
+
 class Utils {
   String lerConsole() {
     return stdin.readLineSync(encoding: utf8) ?? "";
   }
 
-  double? lerDouble() {
-    var value = lerConsole();
+  double lerDouble() {
+    var console = lerConsole();
+    double valor = 0.0;
     try {
-      return double.parse(value);
+      console = console.replaceAll(",", ".");
+      valor = double.parse(console);
     } catch (error) {
-      return null;
+      print(DoubleInvalido());
+      exit(0);
     }
+    
+    return valor;
   }
 
-  lerConsoleComTexto(String texto, [bool isDouble = false]) {
+  String lerNome() {
+    print("Por favor, digite o nome da pessoa:");
+    String nome = "";
+    nome = lerConsole();
+    while (nome == "") {
+      print("O nome da pessoa não pode estar vazio!");
+      print("Digite o nome para continuar:");
+      nome = lerConsole();
+    }
+    return nome;
+  }
+
+  lerDoubleComTexto(String texto) {
     print(texto);
-    return isDouble ? lerDouble() : lerConsole();
+    return lerDouble();
   }
 }

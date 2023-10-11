@@ -5,11 +5,8 @@ import 'package:meu_app_imc/utils/utils.dart';
 void main(List<String> arguments) {
   Utils utils = Utils();
   print("Olá, seja bem vindo ao desafio de calcular IMC");
-  String? nome = utils.lerConsoleComTexto("Por favor, digite o nome da pessoa:");
-  double peso =
-      utils.lerConsoleComTexto("Agora, digite o peso da pessoa: ", true);
-  double altura =
-      utils.lerConsoleComTexto("E por fim, digite a altura da pessoa: ", true);
-
-
+  String nome = utils.lerNome();
+  double peso = utils.lerDoubleComTexto("Digite o peso da pessoa: ");
+  double altura = utils.lerDoubleComTexto("Digite a altura da pessoa: ");
+  meu_app_imc.classificacao(Pessoa(nome, peso, altura));
 }

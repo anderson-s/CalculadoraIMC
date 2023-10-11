@@ -8,12 +8,6 @@ double calculateImc(Pessoa pessoa) {
 }
 
 classificacao(Pessoa pessoa) {
-  if (pessoa.peso == 0.0 || pessoa.peso == 0.0) {
-    print(
-      "Para calcular o IMC com precisão, a altura e o peso devem ser valores maiores que zero.\nPor favor, reveja os valores que você inseriu.",
-    );
-    exit(0);
-  }
   double resultado = calculateImc(pessoa);
   if (resultado.isInfinite) {
     print("IMC infinito");
